@@ -11,5 +11,35 @@ const env = "DEV"; // Toggle between these possible values "DEV" | "STAGE" | "PR
 let databaseCredential = "devuser:password";
 
 // Task: Add code here
+/*if (env == "STAGE") {
+
+    databaseCredential = "stageuser:password"
+    
+} else if (env == "PROD") {
+
+    databaseCredential = "produser:password"
+    
+}*/
+
+
+switch(env.toUpperCase())
+{
+    case "DEV":
+    databaseCredential = "devuser:password";
+    break;
+
+    case "STAGE":
+    databaseCredential = "stageuser:password";
+    break;
+
+    case "PROD":
+    databaseCredential = "produser:password";
+    break;
+
+    default:
+    databaseCredential = "env not found";
+    break;
+}
+
 
 console.log(`Database credential for environment ${env} is ${databaseCredential}`);
